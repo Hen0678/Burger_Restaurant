@@ -5,14 +5,17 @@ body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #ffffff;
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* Ensure main content expands to take available space */
 main {
     flex-grow: 1;
+    margin-top: 60px;
+    padding: 20px;
 }
 
 .navbar {
@@ -25,6 +28,7 @@ main {
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 .navbar .logo {
@@ -165,14 +169,40 @@ main {
 }   
 
 .footer {
-    background-color: #333;  /* Dark background to contrast with text */
-    color: #ffffff;  /* White text */
-    text-align: center;
-    padding: 2px 0;
-    position: absolute;
-    bottom: 0;
+    background-color: #333;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
     width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+     
 }
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    margin-right: 50px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #ff6600; /* Changes color on hover */
+}
+
+
 
 
 /* Mobile Styles */
@@ -202,9 +232,18 @@ main {
         display: flex; /* Show the nav items when active */
     }
 
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center icons on mobile */
+        margin-top: 10px;
+    } 
+
   }
-
-
 
 /* Adjustments for very small screens */
 @media (max-width: 480px) {
