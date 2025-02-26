@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #ffffff;
-    background-image: url('/assets/images/burger1.jpg'); /* Your image URL here */
-    background-size: cover; /* Ensures the image covers the entire page */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents image from repeating */
     min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure main content expands to take available space */
+main {
+    flex-grow: 1;
 }
 
 .navbar {
@@ -24,6 +29,7 @@ body {
 
 .navbar .logo {
     font-size: 24px;
+    font-family: 'Black Han Sans', sans-serif;;
     font-weight: bold;
     color: #ff6600;
     margin-right: auto;
@@ -85,6 +91,7 @@ body {
 }
 
 /* Hero Section */
+
 .hero {
     display: flex;
     align-items: center;
@@ -94,7 +101,7 @@ body {
     color: #fff;
     text-align: left;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 .hero-text {
@@ -156,6 +163,18 @@ body {
     object-fit: contain;  /* Ensures the image fills the space without distortion */
     border-radius: 10px;
 }   
+
+.footer {
+    background-color: #333;  /* Dark background to contrast with text */
+    color: #ffffff;  /* White text */
+    text-align: center;
+    padding: 2px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .navbar ul {
