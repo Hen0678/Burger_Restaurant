@@ -20,6 +20,8 @@ const ScrollRevealOption = {
     duration: 1000,
 };
 
+/* ScrollReveal for animating elements as they enter/leave the viewport */
+
 ScrollReveal().reveal(".header__image img", {
     ...ScrollRevealOption,
     origin: "right",
