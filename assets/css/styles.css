@@ -187,6 +187,14 @@ nav {
         z-index: 1;
     }
 
+    .nav__links a {
+        color: var(--primary_color);
+    }
+
+    .nav__links a:hover {
+        color: var(--tertiary-color);
+    }
+
 }
 
 
