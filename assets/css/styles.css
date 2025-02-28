@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*root is a pseudo-class that represents the highest-level parent element - typically the html element */
+:root {
+    --primary_color:#42200b;
+    --secondary_color:#ffc135;
+    --tertiary-color:#df1c1c;
+    --text-dark:#212529;
+    --white:#ffffff;
+    --max-width: 1200px;
+    --header-font-1: "Alfa Slab One", serif;
+    --header-font-2: "Bebas Neue", serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    /* border-box = total width includes the content, padding and border */
+    box-sizing: border-box;
+}
+
+
+.section__container {
+    /* var is a CSS variable meaning that max-width must be defined elsewhere (root)*/
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section__header {
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: var(--header-font-1);
+    color: var(--primary_color);
+    text-align: center;
+    line-height: 3.75rem;
+    text-shadow: 2px 2px var(--secondary_color);
+}
+
+.section__description {
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.75rem;  
+}
+
+.btn {
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--tertiary-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary_color);
+}
+
+img {
+    display: flex;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", serif;
+}
+
+.header {
+    background-image: url(/assets/images/header-bg.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    z-index: 9;
+}
+
+.nav__header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary_color);
+}
+
+.nav__logo img {
+    max-width: 150px;
+}
+
+.nav__logo-dark {
+    display: none;
+}
+
+.nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav__links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--primary_color);
+    transition: 0.5s;
+    z-index: -1;
+    transform: translateY(-100%); 
+}
+
+.nav__links.open {
+    transform: translateY(0);
+}
+
+.nav__links a {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.nav__links a:hover {
+    color: var(--secondary_color);
+}
+
+@media (width > 768px) {
+    nav { 
+        position: static;
+        padding:  2rem 1 rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+}        
+
+    .nav__header {
+        padding: 0;
+        background-color: transparent;
+}
+
+    .nav__logo img {
+        max-width: 250px;
+    }
+
+    .nav__logo-dark {
+        display: flex;
+    }
+
+    .nav__logo-white {
+        display: none;
+    }
+
+    .nav__menu__btn {
+        display: none;
+    }
+    
+    .nav__links {
+        position: static;
+        padding: 0;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: transparent;
+        transform: none;
+        z-index: 1;
+    }
+
+}
+
+
+
