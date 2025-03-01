@@ -280,6 +280,30 @@ nav {
     line-height: 1.75rem;
 }
 
+.event__content {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event__details {
+    text-align: center;
+}
+
+.event__details h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--header-font-2);
+    color: var(--text-dark);
+}
+
+.event__details .section__header {
+    margin-bottom: 1rem;
+
+
+}
+
 @media (width > 540px) {
     .banner__container {
         grid-template-columns: repeat(2, 1fr);
@@ -370,6 +394,21 @@ nav {
 
     .order__grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .event__content {
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+    }
+
+    .event__image {
+        grid-area: 1/2/2/3;
+    }
+
+    .event__details,
+    .event__details .section__header {
+        text-align: left;
+
     }
 }
 

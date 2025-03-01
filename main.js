@@ -41,3 +41,7 @@ ScrollReveal().reveal(".order__card", {
     ...ScrollRevealOption, 
     interval: 500,
 });
+
+ScrollReveal().reveal(".event__content", {
+    duration: 1000,
+});
