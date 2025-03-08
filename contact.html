@@ -52,7 +52,7 @@
   <body>
     <div class="container">
       <h1>Contact Us</h1>
-      <p><strong>Burger Haven</strong></p>
+      <p><strong>Harley's Burgers</strong></p>
       <p>123 Burger Street, London, UK</p>
       <p>Phone: +44 1234 567890</p>
 
@@ -70,29 +70,9 @@
 
       <div id="map"></div>
     </div>
-
-    <script>
-      function initMap() {
-          var location = { lat: 51.5074, lng: -0.1278 }; // London Coordinates
-          var map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 14,
-              center: location,
-          });
-          var marker = new google.maps.Marker({
-              position: location,
-              map: map,
-              title: "Burger Haven"
-          });
-      }
-
-      document.getElementById("contactForm").addEventListener("submit", function(event) {
-          event.preventDefault();
-          alert("Your message has been sent successfully!");
-          document.getElementById("contactForm").reset();
-      }); 
-      </script>
-
+   
     <script src="assets/js/maps.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
     <script
