@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Burger Haven</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #222;
+        color: white;
+      }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #333;
+        border-radius: 10px;
+        text-align: center;
+      }
+      input,
+      textarea,
+      button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      input,
+      textarea {
+        background: #444;
+        color: white;
+      }
+      button {
+        background: #ff6600;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #cc5200;
+      }
+      #map {
+        height: 400px;
+        width: 100%;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p><strong>Burger Haven</strong></p>
+      <p>123 Burger Street, London, UK</p>
+      <p>Phone: +44 1234 567890</p>
+
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea
+          id="message"
+          placeholder="Your Message"
+          rows="4"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="map"></div>
+    </div>
+
+    <script>
+      function initMap() {
+          var location = { lat: 51.5074, lng: -0.1278 }; // London Coordinates
+          var map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 14,
+              center: location,
+          });
+          var marker = new google.maps.Marker({
+              position: location,
+              map: map,
+              title: "Burger Haven"
+          });
+      }
+
+      document.getElementById("contactForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+          alert("Your message has been sent successfully!");
+          document.getElementById("contactForm").reset();
+      }); 
+      </script>
+
+    <script src="assets/js/maps.js"></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkY5SDhIg7WHw9wyVn04CrXjYnISGH4M&callback=initMap&libraries=places,marker"
+      async
+    ></script>
+  </body>
+</html>
